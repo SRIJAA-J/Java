@@ -1,0 +1,33 @@
+import java.util.*;
+import java.util.regex.*;
+public class Aadhar{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        //String a=sc.nextLine();
+        System.out.println("enter the Aadhar No: ");
+        String a=sc.nextLine();
+        if(a.isEmpty())
+        {
+            System.out.println("Invalid aadhar Number");
+        }
+        else if(a.length()==10)
+        {
+           a="^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}";
+            Pattern pattern=Pattern.compile(a);
+            Matcher matcher=pattern.matcher(a);
+            if(matcher.matches())
+            {
+                System.out.println("Valid Pan Number");
+            }
+            else 
+            {
+                System.out.println("Invalid Pan Number");
+            }
+        }
+        else
+        {
+            System.out.println("Invalid Pan Number");
+        }
+    }
+}
